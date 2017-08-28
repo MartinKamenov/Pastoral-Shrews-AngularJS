@@ -1,0 +1,17 @@
+.tabular-form{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.buttons {
+    width: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-default {
+    margin-right: 30px;
+}
