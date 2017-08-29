@@ -17,9 +17,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 // Routes components
 import { NavigationComponent } from './navigation/navigation.component';
 import { RegisterComponent } from './register/register.component';
-// import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 // import { ProfileComponent } from './profile/profile.component';
 
 
@@ -31,6 +31,7 @@ import { LoginComponent } from './login/login.component';
     // NotFoundComponent,
     HomeComponent,
     LoginComponent,
+    PageNotFoundComponent,
     // ProfileComponent
 ],
   imports: [
