@@ -1,31 +1,38 @@
-<div class="tabular-form">
-    <form class="form-horizontal" [formGroup]="userForm" (ngSubmit)="register()">
-        <fieldset>
-            <legend align="center">Register</legend>
-
-            <div class="form-group">
-                <label class="col-lg-2 control-label" for="email">Email address:</label>
-                <input type="email" id="email" class="input" formControlName="email" required>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4 form-box">
+            <div class="form-top">
+                <div class="form-top-left">
+                    <h3>Sign up now</h3>
+                    <p>Fill in the form below to get instant access:</p>
+                </div>
+                <div class="form-top-right">
+                    <i class="fa fa-key"></i>
+                </div>
             </div>
-
-            <div *ngIf="formErrors.email" class="alert alert-danger">
-                {{ formErrors.email }}
+            <div class="form-bottom">
+                <form class="form-horizontal" [formGroup]="userForm" (ngSubmit)="register()">
+                    <div class="form-group">
+                        <label class="sr-only" for="email">Email address:</label>
+                        <input type="email" id="email" name="email" placeholder="Email..." formControlName="email" required class="form-email form-control">
+                    </div>
+                    <div *ngIf="formErrors.email" class="alert alert-danger">
+                        {{ formErrors.email }}
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="form-password">Password</label>
+                        <input type="password" id="password" name="form-password" placeholder="Password..." class="form-password form-control" formControlName="password" required>
+                    </div>
+                    <div *ngIf="formErrors.password" class="alert alert-danger">
+                        {{ formErrors.password }}
+                    </div>
+                    <div *ngIf="userForm.valid" class="alert alert-success">Form is valid</div>
+                    <div class="form-group buttons">
+                        <button class="btn btn-default" type="reset">Cancel</button>
+                        <button type=" submit " class="button btn btn-success " [disabled]="!userForm.valid ">Register</button>
+                    </div>
+                </form>
             </div>
-
-            <div class="form-group">
-                <label class="col-lg-2 control-label" for="password">Password:</label>
-                <input type="password" id="password" class="input" formControlName="password" required>
-            </div>
-
-            <div *ngIf="formErrors.password" class="alert alert-danger">
-                {{ formErrors.password }}
-            </div>
-
-            <div *ngIf="userForm.valid" class="alert alert-success">Form is valid</div>
-            <div class="form-group buttons">
-                <button class="btn btn-default" type="reset">Cancel</button>
-                <button type=" submit " class="button btn btn-success " [disabled]="!userForm.valid ">Register</button>
-            </div>
-        </fieldset>
-    </form>
+        </div>
+    </div>
 </div>
