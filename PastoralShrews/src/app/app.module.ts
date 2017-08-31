@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { RoutingModule } from './routing.module';
+import { ToasterModule } from 'angular2-toaster';
 
 import { AuthService } from './core/auth.service';
 
@@ -40,7 +41,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     ReactiveFormsModule,
-    RoutingModule
+    RoutingModule,
+    ToasterModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
