@@ -3,6 +3,8 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
+import { ToasterService, Toast } from 'angular2-toaster';
+
 
 @Injectable()
 export class AuthService {
@@ -11,6 +13,7 @@ export class AuthService {
 
     constructor(private afAuth: AngularFireAuth,
         private db: AngularFireDatabase,
+        private toasterService: ToasterService,
         private router: Router) {
 
         this.afAuth.authState.subscribe((auth) => {
@@ -49,8 +52,9 @@ export class AuthService {
             .then((user) => {
                 this.authState = user;
                 this.updateUserData();
+                this.toasterService.pop('success', `${user.email} is Registrated`);
             })
-            .catch(error => console.log(error));
+            .catch(error => this.toasterService.pop('error', error.message));
     }
 
     emailLogin(email: string, password: string) {
@@ -59,7 +63,7 @@ export class AuthService {
                 this.authState = user;
                 this.updateUserData();
             })
-            .catch(error => console.log(error));
+            .catch(error => this.toasterService.pop('error', error.message));
     }
 
     //// Sign Out ////
