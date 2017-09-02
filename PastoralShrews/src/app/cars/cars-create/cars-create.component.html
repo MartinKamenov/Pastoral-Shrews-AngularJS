@@ -1,0 +1,106 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <form (ngSubmit)="create(createForm.value)" #createForm=ngForm novalidate>
+                <div class="row">
+                    <br>
+                    <h3 class="no-top-margin">
+                        Create New Car Offer</h3>
+                    <hr>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="brand">Brand</label>
+                            <select name="brand" [(ngModel)]="model.brand" class="form-control" id="brand" required>
+                            <option *ngFor="let brand of brands" [value]="brand">
+                              {{brand}}
+                            </option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="model">Model</label>
+                            <input type="text" name="model" [(ngModel)]="model.model" #modelInput=ngModel required class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="engine">Engine Type</label>
+                            <select name="engine" [(ngModel)]="model.engine" #engineInput=ngModel required class="form-control">
+                              <option *ngFor="let engine of engines" [value]="engine">
+                                {{engine}}
+                              </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="power">Power</label>
+                            <input type="text" name="power" [(ngModel)]="model.power" #powerInput=ngModel required class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="year">Year</label>
+                            <input type="number" name="year" [(ngModel)]="model.year" #yearInput=ngModel required class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="transmission">Transmission</label>
+                            <select name="transmission" [(ngModel)]="model.transmission" #transmissionInput=ngModel required class="form-control">>
+                              <option *ngFor="let transmission of transmissions" [value]="transmission">
+                                {{transmission}}
+                              </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="color">Color</label>
+                            <input type="text" name="color" [(ngModel)]="model.color" #colorInput=ngModel required class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="location">location</label>
+                            <input type="text" name="location" [(ngModel)]="model.location" #locationInput=ngModel required class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input type="number" name="price" [(ngModel)]="model.location" #priceInput=ngModel required class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <br>
+                    <h3>
+                        Description</h3>
+                    <div class="clear"></div>
+                    <hr>
+
+
+                    <textarea name="description" [(ngModel)]="model.description" #descriptionInput=ngModel required class="pull-left form-control" cols="80" rows="7"></textarea>
+                    <div class="clear"></div>
+                    <br>
+                    <div class="clearfix"></div>
+                    <br>
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="image">Image</label>
+                            <input type="text" name="image" [(ngModel)]="model.image" #imageInput=ngModel required class="form-control">
+                        </div>
+                        <input type="submit" [disabled]="!createForm.valid">
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

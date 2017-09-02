@@ -5,6 +5,7 @@
         </div>
         <ul class="nav navbar-nav">
             <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+            <li *ngIf="auth.currentUser"><a routerLink="/cars/create" routerLinkActive="active">Create New Car</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li *ngIf="auth.currentUser"><a routerLink="/profile" routerLinkActive="active"><strong>Hello, {{auth.currentUserDisplayName}}</strong></a></li>

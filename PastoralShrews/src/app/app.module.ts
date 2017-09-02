@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RoutingModule } from './routing.module';
 import { ToasterModule } from 'angular2-toaster';
 
@@ -21,28 +22,28 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-// import { ProfileComponent } from './profile/profile.component';
-
+import { CarsModule } from './cars/cars.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     RegisterComponent,
-    // NotFoundComponent,
     HomeComponent,
     LoginComponent,
     PageNotFoundComponent,
-    // ProfileComponent
 ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     ReactiveFormsModule,
+    FormsModule,
     RoutingModule,
-    ToasterModule
+    ToasterModule,
+    CarsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
