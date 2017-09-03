@@ -15,13 +15,13 @@ export class HomeComponent implements OnInit {
 
   constructor(public carsService: CarsService) { }
 
-  ngOnInit() {   
+  ngOnInit() {
     this.carsService.getCarsList().subscribe(snapshots => {
       snapshots.forEach(snapshot => {
-        console.log(snapshot)
+        console.log(snapshot);
         this.cars.push(snapshot);
-      })
-    })
+      });
+    });
 
     console.log(this.cars);
   }
