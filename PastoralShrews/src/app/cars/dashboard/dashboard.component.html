@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="col-md-10 col-md-offset-1">
+        <h1>Dashboard</h1>
+        <hr>
+        <div class="row">
+            <h2>List Sells</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>Engine</th>
+                            <th>Location</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let car of carsList | async">
+                            <td class="img-data"><img src={{car.image}} width="100px"></td>
+                            <td> {{car.brand}}</td>
+                            <td> {{car.model}}</td>
+                            <td> {{car.engine}}</td>
+                            <td> {{car.location}}</td>
+                            <td> {{car.price}}</td>
+                            <td align="center"><button type="submit" class="button btn btn-primary" (click)='editCar(car.$key)'>Edit</button></td>
+
+                            <td align="center"><button type="submit" class="button btn btn-danger" (click)='deleteCar(car.$key)'>Delete</button></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>

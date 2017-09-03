@@ -1,17 +1,15 @@
-export class ICar {
-    constructor(
-    public model: string,
-    public year?: string,
-    public brand?: string,
-    public location?: string,
-    public transmission?: string,
-    public power?: string,
-    public color?: string,
-    public engine?: string,
-    public image?: string,
-    public description?: string,
-    public price?: string,
-    ) { }
-  }
-
-
+export class ICar {  
+       $key: string;
+       userEmail: string;
+       model: string;
+       year: string;
+       brand: string;
+       location: string;
+       transmission: string;
+       power: string;
+       color: string;
+       engine: string;
+       image: string;
+       description: string;
+       price: string;
+    }
