@@ -5,6 +5,7 @@ import { CarsRoutingModule } from './cars-routing.module';
 import { CarsCreateComponent } from './cars-create/cars-create.component';
 import { FormsModule } from '@angular/forms';
 import { CarsService } from './cars.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,7 @@ import { CarsService } from './cars.service';
     CarsRoutingModule,
     FormsModule
   ],
-  declarations: [CarsCreateComponent],
+  declarations: [CarsCreateComponent, DashboardComponent],
   providers: [
     CarsService
   ]

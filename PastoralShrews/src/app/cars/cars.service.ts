@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { ICar } from './cars.models';
 import { ToasterService, Toast } from 'angular2-toaster';
+import { AuthService } from '../core/auth.service';
 
 
 @Injectable()
@@ -11,6 +12,7 @@ export class CarsService  {
 
   constructor(
     private db: AngularFireDatabase,
+    public auth: AuthService,
     private toasterService: ToasterService) {
     // this.cars = this.db.list('/cars');
    }
@@ -30,6 +32,7 @@ getCar(key: string): FirebaseObjectObservable<ICar> {
 
 // Create a brand new car
 createCar(car: ICar): void {
+    car.userEmail = this.auth.currentUserEmail;
     this.cars = this.db.list('/cars');
     this.cars.push(car)
     .then(() => this.toasterService.pop('success', `New car created`))

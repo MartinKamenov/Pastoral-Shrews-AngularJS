@@ -46,6 +46,9 @@ export class AuthService {
             return username;
      }
 
+     get currentUserEmail(): string {
+        return this.authenticated ? this.authState.email : '';
+    }
     //// Email/Password Auth ////
     emailSignUp(email: string, password: string) {
         return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
