@@ -10,7 +10,7 @@ import {CarsService} from './../cars.service';
 })
 export class CarsCreateComponent {
 
-  model= new ICar('', '');
+  model= new ICar();
   brands= ['Alpha Romeo',
   'Audi',
   'BMW',
