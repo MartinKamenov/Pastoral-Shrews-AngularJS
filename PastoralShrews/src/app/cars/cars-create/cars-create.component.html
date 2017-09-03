@@ -44,7 +44,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="year">Year</label>
-                            <input type="number" name="year" [(ngModel)]="model.year" #yearInput=ngModel required class="form-control">
+                            <input type="number" min="1950" max="2047" name="year" [(ngModel)]="model.year" #yearInput=ngModel required class="form-control">
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -62,19 +62,28 @@
                             <label for="color">Color</label>
                             <input type="text" name="color" [(ngModel)]="model.color" #colorInput=ngModel required class="form-control">
                         </div>
+                        <span [hidden]="colorInput.valid || colorInput.pristine">
+                                Color is required!
+                        </span>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="location">location</label>
                             <input type="text" name="location" [(ngModel)]="model.location" #locationInput=ngModel required class="form-control">
+                            <span [hidden]="locationInput.valid || locationInput.pristine">
+                                    Location is required!
+                            </span>
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="price">Price</label>
-                            <input type="number" name="price" [(ngModel)]="model.location" #priceInput=ngModel required class="form-control">
+                            <input type="number" min="1" name="price" [(ngModel)]="model.price" #priceInput=ngModel required class="form-control">
+                            <span [hidden]="priceInput.valid || priceInput.pristine">
+                                    Price is required!
+                            </span>
                         </div>
                     </div>
 
@@ -85,7 +94,6 @@
                     <div class="clear"></div>
                     <hr>
 
-
                     <textarea name="description" [(ngModel)]="model.description" #descriptionInput=ngModel required class="pull-left form-control" cols="80" rows="7"></textarea>
                     <div class="clear"></div>
                     <br>
@@ -95,6 +103,9 @@
                         <div class="form-group">
                             <label for="image">Image</label>
                             <input type="text" name="image" [(ngModel)]="model.image" #imageInput=ngModel required class="form-control">
+                            <span [hidden]="imageInput.valid || imageInput.pristine">
+                                    Image is required!
+                            </span>
                         </div>
                         <input type="submit" [disabled]="!createForm.valid">
                     </div>

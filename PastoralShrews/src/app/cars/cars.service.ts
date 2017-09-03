@@ -5,46 +5,47 @@ import { ToasterService, Toast } from 'angular2-toaster';
 
 
 @Injectable()
-export class CarsService  {
-  cars: FirebaseListObservable<ICar[]> = null; //  list of objects
-  car: FirebaseObjectObservable<ICar> = null; //   single object
+export class CarsService {
+    cars: FirebaseListObservable<ICar[]> = null; //  list of objects
+    car: FirebaseObjectObservable<ICar> = null; //   single object
 
-  constructor(
-    private db: AngularFireDatabase,
-    private toasterService: ToasterService) {
-    // this.cars = this.db.list('/cars');
-   }
-  getCarsList(query = {}): FirebaseListObservable<ICar[]> {
-    this.cars = this.db.list('/cars', {
-        query: query
-    });
-    return this.cars;
-}
+    constructor(
+        private db: AngularFireDatabase,
+        private toasterService: ToasterService) {
+        // this.cars = this.db.list('/cars');
+    }
 
-// Return a single observable car
-getCar(key: string): FirebaseObjectObservable<ICar> {
-    const advPath = `/cars/${key}`;
-    this.car = this.db.object(advPath);
-    return this.car;
-}
+    getCarsList(query = {}): FirebaseListObservable<ICar[]> {
+        this.cars = this.db.list('/cars', {
+            query: query
+        });
+        return this.cars;
+    }
 
-// Create a brand new car
-createCar(car: ICar): void {
-    this.cars = this.db.list('/cars');
-    this.cars.push(car)
-    .then(() => this.toasterService.pop('success', `New car created`))
-    .catch(error => this.handleError(error));
-}
+    // Return a single observable car
+    getCar(key: string): FirebaseObjectObservable<ICar> {
+        const advPath = `/cars/${key}`;
+        this.car = this.db.object(advPath);
+        return this.car;
+    }
 
-// Delete a single car
-deleteCar(key: string): void {
-    this.cars.remove(key)
-        .catch(error => this.handleError(error));
-}
+    // Create a brand new car
+    createCar(car: ICar): void {
+        this.cars = this.db.list('/cars');
+        this.cars.push(car)
+            .then(() => this.toasterService.pop('success', `New car created`))
+            .catch(error => this.handleError(error));
+    }
 
-// Default error handling for all actions
-private handleError(error) {
-    this.toasterService.pop('error', error.massage);
-}
+    // Delete a single car
+    deleteCar(key: string): void {
+        this.cars.remove(key)
+            .catch(error => this.handleError(error));
+    }
+
+    // Default error handling for all actions
+    private handleError(error) {
+        this.toasterService.pop('error', error.massage);
+    }
 }
 
