@@ -11,7 +11,7 @@ import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable }
   '../../assets/css/shop-homepage.css']
 })
 export class HomeComponent implements OnInit {
-  cars: Array<Object> = [];
+  cars: Array<ICar> = [];
 
   constructor(public carsService: CarsService) { }
 
