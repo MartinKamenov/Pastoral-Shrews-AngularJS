@@ -3,6 +3,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 import {CarsService} from '../cars.service';
 import {ICar} from './../cars.models';
 import {AuthService} from './../../core/auth.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,6 +22,7 @@ carsList: FirebaseListObservable<ICar[]>;
         equalTo: this.auth.currentUserEmail
       }
     );
+    console.log(this.carsList);
      }
   deleteCar(carToDelete) {
     this.carSrv.deleteCar(carToDelete);
