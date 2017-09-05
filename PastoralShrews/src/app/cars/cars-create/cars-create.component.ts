@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ICar } from './../cars.models';
 import { CarsService } from './../cars.service';
+import {brands, engines, transmissions} from '../../share/data-models'
 
 @Component({
   selector: 'app-cars-create',
@@ -11,29 +12,10 @@ import { CarsService } from './../cars.service';
 export class CarsCreateComponent {
 
   model= new ICar();
-  brands= ['Alpha Romeo',
-  'Audi',
-  'BMW',
-  'Chevrolet',
-  'Citroen',
-  'Dacia',
-  'Fiat',
-  'Ford',
-  'Great wall',
-  'Honda'
-  ];
+  brands = brands;
 
-   engines = [
-    'Benzin',
-    'Diesel',
-    'Electric',
-    'LPG',
-    'Natural Gas'
-   ];
-transmissions = [
-    'Manual',
-    'Automatic'
-   ];
+   engines = engines;
+transmissions = transmissions;
 
 
   constructor(private carsService: CarsService) { }

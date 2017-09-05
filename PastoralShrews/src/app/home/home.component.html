@@ -46,10 +46,10 @@
             <div class="row" *ngFor="let car of cars">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="/cars/details/{{car.$key}}"><img class="card-img-top" src="{{car.image}}" alt=""></a>
+                        <a routerLink="/cars/details/{{car.$key}}" routerLinkActive="active"><img class="card-img-top" src="{{car.image}}" alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="/cars/details/{{car.$key}}">{{car.brand}}</a>
+                                <a routerLink="/cars/details/{{car.$key}}" routerLinkActive="active"></a>
                             </h4>
                             <h5>Price: ${{car.price}}</h5>
                             <p class="card-text">{{car.description}}</p>
