@@ -3,7 +3,7 @@
     <div class="row">
 
         <div class="col-lg-3">
-            <home-search></home-search>    
+            <home-search (changed)="filterChanged($event)"></home-search>    
         </div>
         <!-- /.col-lg-3 -->
 
@@ -36,7 +36,7 @@
                 </a>
             </div>
 
-            <div class="row" *ngFor="let car of cars">
+            <div class="row" *ngFor="let car of filteredCars">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
                         <a routerLink="/cars/details/{{car.$key}}" routerLinkActive="active"><img class="card-img-top" [src]="car.image" alt=""></a>

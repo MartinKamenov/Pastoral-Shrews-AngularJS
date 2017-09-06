@@ -26,6 +26,8 @@ import { CarsModule } from './cars/cars.module';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { HomeSearchComponent } from './home/search/home-search.component';
 
+import { FilterService } from './home/search/home-search.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +51,7 @@ import { HomeSearchComponent } from './home/search/home-search.component';
     ToasterModule,
     CarsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, FilterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

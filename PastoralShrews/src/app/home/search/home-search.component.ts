@@ -1,13 +1,12 @@
-import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { Component, EventEmitter, Output, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'home-search',
     templateUrl: './home-search.component.html'
 })
 
-export class HomeSearchComponent {
-    @Output()
-    changed: EventEmitter<String>;
+export class HomeSearchComponent implements OnInit {
+    @Output() changed: EventEmitter<String>;
     filter: string;
 
     constructor() {
@@ -16,6 +15,10 @@ export class HomeSearchComponent {
 
     filterChanged(event: any) {
         event.preventDefault();
+        console.log(`Filter Changed: ${this.filter}`);
         this.changed.emit(this.filter);
+    }
+
+    ngOnInit() {
     }
 }
