@@ -1,4 +1,4 @@
-export class ICar {  
+export class ICar {
        $key: string;
        userEmail: string;
        model: string;

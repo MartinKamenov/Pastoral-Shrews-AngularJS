@@ -1,16 +1,16 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
-            <form (ngSubmit)="create(createForm.value)" #createForm=ngForm novalidate>
+            <form [formGroup]="myDBForm" (ngSubmit)="onUpdateCar(editForm.value)" #editForm="ngForm" novalidate>
                 <div class="row">
                     <br>
                     <h3 class="no-top-margin">
-                        Create New Car Offer</h3>
+                        Edit Car</h3>
                     <hr>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="brand">Brand</label>
-                            <select name="brand" [(ngModel)]="model.brand" class="form-control" id="brand" required>
+                            <select name="brand" class="form-control" id="brand" #brand formControlName="brand" required>
                             <option *ngFor="let brand of brands" [value]="brand">
                               {{brand}}
                             </option>
@@ -20,13 +20,13 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="model">Model</label>
-                            <input type="text" name="model" [(ngModel)]="model.model" #modelInput=ngModel required class="form-control">
+                            <input type="text" name="model" #model formControlName="model" class="form-control" required>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="engine">Engine Type</label>
-                            <select name="engine" [(ngModel)]="model.engine" #engineInput=ngModel required class="form-control">
+                            <select name="engine" #engine formControlName="engine" class="form-control" required>
                               <option *ngFor="let engine of engines" [value]="engine">
                                 {{engine}}
                               </option>
@@ -37,20 +37,20 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="power">Power</label>
-                            <input type="text" name="power" [(ngModel)]="model.power" #powerInput=ngModel required class="form-control">
+                            <input type="text" name="power" formControlName="power" #power class="form-control" required>
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="year">Year</label>
-                            <input type="number" min="1950" max="2047" name="year" [(ngModel)]="model.year" #yearInput=ngModel required class="form-control">
+                            <input type="number" name="year" formControlName="year" #year required class="form-control">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="transmission">Transmission</label>
-                            <select name="transmission" [(ngModel)]="model.transmission" #transmissionInput=ngModel required class="form-control">>
+                            <select name="transmission" formControlName="transmission" #transmission required class="form-control">>
                               <option *ngFor="let transmission of transmissions" [value]="transmission">
                                 {{transmission}}
                               </option>
@@ -60,35 +60,25 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="color">Color</label>
-                            <input type="text" name="color" [(ngModel)]="model.color" #colorInput=ngModel required class="form-control">
+                            <input type="text" name="color" formControlName="color" #color required class="form-control">
                         </div>
-                        <span [hidden]="colorInput.valid || colorInput.pristine">
-                                Color is required!
-                        </span>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="location">location</label>
-                            <!-- <input type="text" name="location" [(ngModel)]="model.location" #locationInput=ngModel required class="form-control"> -->
-                            <select name="location" [(ngModel)]="model.location" #locationInput=ngModel required class="form-control">>
-                                <option *ngFor="let location of locations" [value]="location">
-                                  {{location}}
-                                </option>
-                              </select>
-                            <span [hidden]="locationInput.valid || locationInput.pristine">
-                                    Location is required!
-                            </span>
+                            <label for="location">Location</label>
+                            <select name="location" formControlName="location" #location required class="form-control">>
+                              <option *ngFor="let location of locations" [value]="location">
+                                {{location}}
+                              </option>
+                            </select>
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="price">Price</label>
-                            <input type="number" min="1" name="price" [(ngModel)]="model.price" #priceInput=ngModel required class="form-control">
-                            <span [hidden]="priceInput.valid || priceInput.pristine">
-                                    Price is required!
-                            </span>
+                            <input type="number" name="price" formControlName="price" #price required class="form-control">
                         </div>
                     </div>
 
@@ -99,7 +89,8 @@
                     <div class="clear"></div>
                     <hr>
 
-                    <textarea name="description" [(ngModel)]="model.description" #descriptionInput=ngModel required class="pull-left form-control" cols="80" rows="7"></textarea>
+
+                    <textarea name="description" formControlName="description" #description required class="pull-left form-control" cols="80" rows="7"></textarea>
                     <div class="clear"></div>
                     <br>
                     <div class="clearfix"></div>
@@ -107,12 +98,9 @@
                     <div class="col-md-8">
                         <div class="form-group">
                             <label for="image">Image</label>
-                            <input type="text" name="image" [(ngModel)]="model.image" #imageInput=ngModel required class="form-control">
-                            <span [hidden]="imageInput.valid || imageInput.pristine">
-                                    Image is required!
-                            </span>
+                            <input type="text" name="image" formControlName="image" #image required class="form-control">
                         </div>
-                        <input class="button btn btn-primary" type="submit" [disabled]="!createForm.valid">
+                        <input class="button btn btn-primary" type="submit" [disabled]="!editForm.valid">
                     </div>
 
                 </div>

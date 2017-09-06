@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ICar } from './../cars.models';
 import { CarsService } from './../cars.service';
-import {brands, engines, transmissions} from '../../share/data-models'
+import {brands, engines, transmissions, locations} from '../../share/data-models'
 
 @Component({
   selector: 'app-cars-create',
@@ -14,6 +14,7 @@ export class CarsCreateComponent {
   model= new ICar();
   brands = brands;
 
+  locations = locations;
    engines = engines;
 transmissions = transmissions;
 

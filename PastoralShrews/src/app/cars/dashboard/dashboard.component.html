@@ -24,8 +24,9 @@
                             <td> {{car.engine}}</td>
                             <td> {{car.location}}</td>
                             <td> {{car.price}}</td>
-                            <td align="center"><button type="submit" class="button btn btn-primary" (click)='editCar(car.$key)'>Edit</button></td>
-
+                            <td align="center">
+                                <a routerLink="/cars/edit/{{car.$key}}" routerLinkActive="active" class="btn btn-primary btn-md">Edit</a>
+                            </td>
                             <td align="center"><button type="submit" class="button btn btn-danger" (click)='deleteCar(car.$key)'>Delete</button></td>
                         </tr>
 

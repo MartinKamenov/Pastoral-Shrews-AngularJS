@@ -50,3 +50,33 @@ export const engines = [
     'Automatic'
    ];
 
+
+   export const locations = [
+    'Blagoevgrad',
+    'Burgas',
+    'Varna',
+    'Veliko Tarnovo',
+    'Vidin',
+    'Vratsa',
+    'Gabrovo',
+    'Dobrich',
+    'Kardjali',
+    'Kustendil',
+    'Lovech',
+    'Montana',
+    'Pazargik',
+    'Pernik',
+    'Pleven',
+    'Plovdiv',
+    'Razgrad',
+    'Ruse',
+    'Silistra',
+    'Sliven',
+    'Smolyan',
+    'Sofia',
+    'Stara Zagora',
+    'Targovishte',
+    'Haskovo',
+    'Shumen',
+    'Yambol',
+];
