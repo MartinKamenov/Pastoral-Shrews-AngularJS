@@ -24,6 +24,7 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CarsModule } from './cars/cars.module';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { HomeSearchComponent } from './home/search/home-search.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SearchFilterComponent } from './search-filter/search-filter.component';
     LoginComponent,
     PageNotFoundComponent,
     SearchFilterComponent,
+    HomeSearchComponent
 ],
   imports: [
     BrowserModule,
