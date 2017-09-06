@@ -23,6 +23,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CarsModule } from './cars/cars.module';
+import { SearchFilterComponent } from './search-filter/search-filter.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CarsModule } from './cars/cars.module';
     HomeComponent,
     LoginComponent,
     PageNotFoundComponent,
+    SearchFilterComponent,
 ],
   imports: [
     BrowserModule,
