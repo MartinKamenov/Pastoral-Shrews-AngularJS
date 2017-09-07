@@ -52,7 +52,13 @@ updateCar(key: string, value: any): void {
     .then(() => this.toasterService.pop('success', `Car Edited`))
       .catch(error => this.handleError(error));
   }
-
+  updateCarComment(key: string, value: any): void {
+    console.log(key);
+    console.log(value);
+    this.cars.update(key, value)
+    .then(() => this.toasterService.pop('success', `Your comment are successful added`))
+      .catch(error => this.handleError(error));
+  }
 
 // Default error handling for all actions
 private handleError(error) {
