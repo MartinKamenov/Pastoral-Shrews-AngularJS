@@ -1,3 +1,5 @@
+import { IComment } from './comment.models';
+
 export class ICar {
        $key: string;
        userEmail: string;
@@ -13,5 +15,5 @@ export class ICar {
        description: string;
        price: string;
 
-       comments: Array<string>;
+       comments: Array<IComment>;
     }

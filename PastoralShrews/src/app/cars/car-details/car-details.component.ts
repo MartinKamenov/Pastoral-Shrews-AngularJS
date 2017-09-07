@@ -1,9 +1,11 @@
+import { IComment } from './../comment.models';
 import { Component, OnInit } from '@angular/core';
 import { FirebaseObjectObservable } from 'angularfire2/database';
 import { CarsService } from '../cars.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { ICar } from '../cars.models';
+import { AuthService } from '../../core/auth.service';
 
 @Component({
   selector: 'app-car-details',
@@ -24,21 +26,20 @@ export class CarDetailsComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
-    private carsService: CarsService
+    public carsService: CarsService,
+    public auth: AuthService,
   ) {
    }
 
   ngOnInit() {
     this.carKey = this.route.snapshot.params['id'];
-    // console.log(this.carKey);
     this.carsService.getCar(this.carKey)
     .subscribe((car: ICar) => this.car = car);
-    // console.log(this.curentCar);
   }
 
-  addComent(comment: string) {
-    console.log(comment);
-
+  addComent(commentText: string) {
+    const userEmail = this.auth.currentUserEmail;
+    const comment = new IComment(userEmail, commentText);
     if (!this.car.comments) {
 
       const comments = [];
@@ -47,13 +48,8 @@ export class CarDetailsComponent implements OnInit {
     }else {
       this.car.comments.push(comment);
     }
-
   // car.comments.push('koko');
-    console.log(this.car);
-
     this.carsService.updateCar(this.carKey, this.car);
-    this.router.navigate(['cars/profile']);
-
   }
 
   logObject(object: any) {

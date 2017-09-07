@@ -14,7 +14,7 @@ export class CarsService  {
     private db: AngularFireDatabase,
     public auth: AuthService,
     private toasterService: ToasterService) {
-    // this.cars = this.db.list('/cars');
+    this.cars = this.db.list('/cars');
    }
   getCarsList(query = {}): FirebaseListObservable<ICar[]> {
     this.cars = this.db.list('/cars', {
