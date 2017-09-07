@@ -2,21 +2,36 @@
     <div class="col-md-10 col-md-offset-1">
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-8">
-                <img class="img-responsive" [src]="(curentCar | async)?.image" alt="">
+                <img class="img-responsive" [src]="car.image" alt="">
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <h5>DESCRIPTION</h5>
                 <ul>
-                    <li> <span>Brand</span> <strong>{{(curentCar | async)?.brand}}</strong></li>
-                    <li> <span>Model</span> <strong>{{(curentCar | async)?.model}}</strong></li>
-                    <li> <span>Year</span> <strong>{{(curentCar | async)?.year}}</strong></li>
-                    <li> <span>Power</span> <strong>{{(curentCar | async)?.power}}</strong></li>
-                    <li> <span>Engine</span> <strong>{{(curentCar | async)?.engine}}</strong></li>
-                    <li> <span>Transmission</span> <strong>{{(curentCar | async)?.transmission}}</strong></li>
-                    <li> <span>Color</span> <strong>{{(curentCar | async)?.color}}</strong></li>
-                    <li> <span>Price</span> <strong>{{(curentCar | async)?.price}}</strong></li>
-                    <li> <span>Description</span> <strong>{{(curentCar | async)?.description}}</strong></li>
+                    <li> <span>Brand</span> <strong>{{car.brand}}</strong></li>
+                    <li> <span>Model</span> <strong>{{car.model}}</strong></li>
+                    <li> <span>Year</span> <strong>{{car.year}}</strong></li>
+                    <li> <span>Power</span> <strong>{{car.power}}</strong></li>
+                    <li> <span>Engine</span> <strong>{{car.engine}}</strong></li>
+                    <li> <span>Transmission</span> <strong>{{car.transmission}}</strong></li>
+                    <li> <span>Color</span> <strong>{{car.color}}</strong></li>
+                    <li> <span>Price</span> <strong>{{car.price}}</strong></li>
+                    <li> <span>Description</span> <strong>{{car.description}}</strong></li>
                 </ul>
+            </div>
+        </div>
+        <br>
+        <div class="create-comment">
+            <form (ngSubmit)="addComent(mycomment.value)" #mycomment="ngForm" novalidate>
+                <div class="form-group">
+                    <input type="text" name="comment" [(ngModel)]="comment" class="form-control">
+                </div>
+                <input class="button btn btn-success" type="submit">
+            </form>
+        </div>
+        <div>
+            <h1>Comments:</h1>
+            <div class="comment" *ngFor="let comment of car.comments">
+                <p>{{comment.comment}}</p>
             </div>
         </div>
     </div>

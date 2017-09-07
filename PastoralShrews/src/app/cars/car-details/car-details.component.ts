@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseObjectObservable } from 'angularfire2/database';
-import { ActivatedRoute } from '@angular/router';
 import { CarsService } from '../cars.service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { ICar } from '../cars.models';
 
 @Component({
@@ -12,18 +13,50 @@ import { ICar } from '../cars.models';
 export class CarDetailsComponent implements OnInit {
 
   carKey: string;
-  curentCar: FirebaseObjectObservable<ICar>;
+
+  myDBForm: FormGroup;
+  // curentCar: FirebaseObjectObservable<ICar>;
+
+  car: ICar;
+  comment: string;
 
   constructor(
-     private route: ActivatedRoute,
-    private carService: CarsService
-  ) { }
+    private fb: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute,
+    private carsService: CarsService
+  ) {
+   }
 
   ngOnInit() {
     this.carKey = this.route.snapshot.params['id'];
-    console.log(this.carKey);
-    this.curentCar = this.carService.getCar(this.carKey);
-    console.log(this.curentCar);
+    // console.log(this.carKey);
+    this.carsService.getCar(this.carKey)
+    .subscribe((car: ICar) => this.car = car);
+    // console.log(this.curentCar);
   }
 
+  addComent(comment: string) {
+    console.log(comment);
+
+    if (!this.car.comments) {
+
+      const comments = [];
+      comments.push(comment);
+      this.car.comments = comments;
+    }else {
+      this.car.comments.push(comment);
+    }
+
+  // car.comments.push('koko');
+    console.log(this.car);
+
+    this.carsService.updateCar(this.carKey, this.car);
+    this.router.navigate(['cars/profile']);
+
+  }
+
+  logObject(object: any) {
+    console.log(object);
+  }
 }

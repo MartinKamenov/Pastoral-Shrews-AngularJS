@@ -12,4 +12,6 @@ export class ICar {
        image: string;
        description: string;
        price: string;
+
+       comments: Array<string>;
     }
