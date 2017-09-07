@@ -1,11 +1,11 @@
 <div class="container">
-    <div class="col-md-10 col-md-offset-1">
-        <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-8">
+    <div class="col-md-10 col-md-offset-1 ">
+        <div class="row well">
+            <div class="col-lg-8 col-md-8 col-sm-8 ">
                 <img class="img-responsive" [src]="car.image" alt="">
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
-                <h5>DESCRIPTION</h5>
+                <h4>DESCRIPTION</h4>
                 <ul>
                     <li> <span>Brand</span> <strong>{{car.brand}}</strong></li>
                     <li> <span>Model</span> <strong>{{car.model}}</strong></li>
@@ -20,18 +20,22 @@
             </div>
         </div>
         <br>
-        <div class="create-comment">
-            <form (ngSubmit)="addComent(mycomment.value)" #mycomment="ngForm" novalidate>
-                <div class="form-group">
-                    <input type="text" name="comment" [(ngModel)]="comment" class="form-control">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="create-comment">
+                    <form (ngSubmit)="addComent(mycomment.value)" #mycomment="ngForm" novalidate>
+                        <div class="form-group">
+                            <input type="text" name="comment" [(ngModel)]="comment" class="form-control">
+                        </div>
+                        <input class="button btn btn-success" type="submit">
+                    </form>
                 </div>
-                <input class="button btn btn-success" type="submit">
-            </form>
-        </div>
-        <div>
-            <h1>Comments:</h1>
-            <div class="comment" *ngFor="let comment of car.comments">
-                <p>{{comment.comment}}</p>
+                <div>
+                    <h1>Comments:</h1>
+                    <div class="comment well" *ngFor="let comment of car.comments">
+                        <p>{{comment.comment}}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

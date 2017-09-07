@@ -50,10 +50,7 @@ export class CarDetailsComponent implements OnInit {
 
   // car.comments.push('koko');
     console.log(this.car);
-
-    this.carsService.updateCar(this.carKey, this.car);
-    this.router.navigate(['cars/profile']);
-
+    this.carsService.updateCarComment(this.carKey, this.car);
   }
 
   logObject(object: any) {
