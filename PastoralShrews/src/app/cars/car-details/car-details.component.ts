@@ -48,9 +48,7 @@ export class CarDetailsComponent implements OnInit {
     }else {
       this.car.comments.push(comment);
     }
-  // car.comments.push('koko');
-    this.carsService.updateCar(this.carKey, this.car);
-  }
+  this.carsService.updateCarComment(this.carKey, this.car);  }
 
   logObject(object: any) {
     console.log(object);

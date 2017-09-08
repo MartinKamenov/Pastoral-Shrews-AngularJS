@@ -17,7 +17,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let car of carsList | async">
+                        <tr *ngFor="let car of (carsList | async | paginate: { itemsPerPage: 5, currentPage: page })">
                             <td class="img-data"><img src={{car.image}} width="100px"></td>
                             <td> {{car.brand}}</td>
                             <td> {{car.model}}</td>
@@ -31,6 +31,7 @@
                         </tr>
 
                     </tbody>
+                    <pagination-controls (pageChange)="page = $event"> </pagination-controls>
                 </table>
                 <div class="clearfix"></div>
             </div>
