@@ -27,6 +27,7 @@ import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { HomeSearchComponent } from './home/search/home-search.component';
 
 import { FilterService } from './home/search/home-search.service';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FilterService } from './home/search/home-search.service';
     LoginComponent,
     PageNotFoundComponent,
     SearchFilterComponent,
-    HomeSearchComponent
+    HomeSearchComponent,
+    FooterComponent
 ],
   imports: [
     BrowserModule,

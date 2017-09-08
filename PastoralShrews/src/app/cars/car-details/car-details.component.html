@@ -3,9 +3,13 @@
         <div class="row well grey">
             <div class="col-lg-8 col-md-8 col-sm-8 ">
                 <img class="img-responsive" [src]="car.image" alt="">
+                <div>
+                    <h4>Description:</h4>
+                    <hr> {{car.description}}
+                </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
-                <h4>DESCRIPTION</h4>
+                <h4>Key Features</h4>
                 <ul>
                     <li> <span>Brand</span> <strong>{{car.brand}}</strong></li>
                     <li> <span>Model</span> <strong>{{car.model}}</strong></li>
@@ -14,8 +18,7 @@
                     <li> <span>Engine</span> <strong>{{car.engine}}</strong></li>
                     <li> <span>Transmission</span> <strong>{{car.transmission}}</strong></li>
                     <li> <span>Color</span> <strong>{{car.color}}</strong></li>
-                    <li> <span>Price</span> <strong>{{car.price}}</strong></li>
-                    <li> <span>Description</span> <strong>{{car.description}}</strong></li>
+                    <li> <span>Price</span> <strong>{{car.price | currency:'USD':true:'1.0-2'}}</strong></li>
                 </ul>
             </div>
         </div>
