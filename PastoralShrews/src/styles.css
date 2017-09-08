@@ -43,6 +43,13 @@ tbody {
     color: white;
 }
 
+.comment {
+    border: 1px solid darkorange;
+    border-radius: 1%;
+    padding-left: 50px;
+    border-radius: 25px;
+}
+
 @media (min-width: 992px) {
     body {
         padding-top: 56px;

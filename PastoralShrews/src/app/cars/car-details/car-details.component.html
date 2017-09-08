@@ -29,12 +29,12 @@
             </form>
         </div>
         <div>
-            <div class="row" class="comment" *ngFor="let comment of car.comments">
-                <div class="col-md-5">
-                    <h3>{{comment.userEmail}}</h3>
-                    <h4 class="comment-text">{{comment.text}}</h4>
+            <div class="grey comment" *ngFor="let comment of car.comments">
+                <div>
+                    <p>{{comment.userEmail}}</p>
+                    <h2 class="comment-text">{{comment.text}}</h2>
                 </div>
-                <hr>
+                <br>
             </div>
         </div>
     </div>
