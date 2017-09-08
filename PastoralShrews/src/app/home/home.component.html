@@ -1,15 +1,10 @@
 <div class="container">
-    <!-- <h1>{{cars.length}} hey </h1> -->
     <div class="row">
-
         <div class="col-lg-3">
-            <!-- <home-search (changed)="filterChanged($event)"></home-search>     -->
             <app-search-filter></app-search-filter>
         </div>
         <!-- /.col-lg-3 -->
-
         <div class="col-lg-9">
-
             <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -46,24 +41,15 @@
                             <h4 class="card-title">
                                 <a routerLink="/cars/details/{{car.$key}}" routerLinkActive="active"></a>
                             </h4>
-                            <h5>Price: ${{car.price}}</h5>
+                            <h5>Price: {{car.price| currency:'USD':true:'1.0-2'}}</h5>
                             <p class="card-text">{{car.brand}} {{car.model}}</p>
                             <p>Location: {{car.location}}</p>
                         </div>
-                        <!-- <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div> -->
                     </div>
                 </div>
             </div>
-            <!-- /.row -->
-
         </div>
-        <!-- /.col-lg-9 -->
-
     </div>
-    <!-- /.row -->
-
 </div>
 <!-- /.container -->
 
@@ -72,5 +58,4 @@
     <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
     </div>
-    <!-- /.container -->
 </footer>

@@ -16,13 +16,6 @@ export class HomeComponent implements OnInit {
   cars: Array<ICar> = [];
   filteredCars = this.cars;
   constructor(public carsService: CarsService) { }
-  // constructor(public carsService: CarsService, public FilterService: FilterService) { }
-
-  // filterChanged(searchText: string) {
-  //   console.log('user searched: ', searchText);
-  //   this.filteredCars = this.FilterService.filter(searchText, ['model', 'year', 'brand', 'location'],
-  //                                                 this.cars);
-  // }
 
   getCars() {
     this.carsService.getCarsList({
@@ -39,16 +32,4 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getCars();
   }
-
- /* ngOnInit() {
-    this.carsService.getCarsList().subscribe(snapshots => {
-      snapshots.forEach(snapshot => {
-        console.log(snapshot);
-        this.cars.push(snapshot);
-      });
-    });
-
-    console.log(this.cars);
-  }*/
-
 }

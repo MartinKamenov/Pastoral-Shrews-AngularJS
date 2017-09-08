@@ -23,7 +23,7 @@
                             <td> {{car.model}}</td>
                             <td> {{car.engine}}</td>
                             <td> {{car.location}}</td>
-                            <td> {{car.price}}</td>
+                            <td> {{car.price | currency:'USD':true:'1.0-2'}}</td>
                             <td align="center">
                                 <a routerLink="/cars/edit/{{car.$key}}" routerLinkActive="active" class="btn btn-primary btn-md">Edit</a>
                             </td>

@@ -33,7 +33,7 @@
                     <p name="brand"><strong>{{ad.brand}}</strong></p>
                     <p name="model"><strong>Model:</strong> {{ad.model}}</p>
                     <p name="location"><strong>location:</strong> {{ad.location}}</p>
-                    <p name="price"><strong>Price:</strong> {{ad.price}}</p>
+                    <p name="price"><strong>Price:</strong> {{ad.price | currency:'USD':true:'1.0-2'}}</p>
                 </div>
             </div>
         </div>
