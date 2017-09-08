@@ -13,6 +13,7 @@ import { AsyncPipe } from '@angular/common';
 export class DashboardComponent implements OnInit {
 car: ICar = new ICar();
 carsList: FirebaseListObservable<ICar[]>;
+page = 1;
   constructor(public auth: AuthService, private carSrv: CarsService) { }
 
   ngOnInit() {

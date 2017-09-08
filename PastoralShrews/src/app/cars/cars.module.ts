@@ -11,13 +11,15 @@ import { EditCarComponent } from './edit-car/edit-car.component';
 import { CarsListComponent } from './cars-list/cars-list.component';
 import { SortPipe } from '../share/pipes/sort.pipe';
 import { CarsFilterPipe } from '../share/pipes/cars-filter.pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   imports: [
     CommonModule,
     CarsRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   declarations: [
     CarsCreateComponent,
@@ -26,14 +28,11 @@ import { CarsFilterPipe } from '../share/pipes/cars-filter.pipe';
     EditCarComponent,
     CarsListComponent,
     CarsFilterPipe,
-    SortPipe
+    SortPipe,
   ],
   providers: [
     CarsService
   ],
-  exports: [
-    SortPipe,
-    CarsFilterPipe
-]
+
 })
 export class CarsModule { }

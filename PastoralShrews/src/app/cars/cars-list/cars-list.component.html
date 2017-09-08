@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-8">
                     <select class="form-control" id="sortBy" (change)="onSortByChange($event)">
-                      <option *ngFor="let sortBy of sortByOptions" [selected]="sortByOptions === sortBy" value="{{sortBy}}">{{sortBy}}</option>
+                      <option *ngFor="let sortBy of sortByOptions"  value="{{sortBy}}">{{sortBy}}</option>
                   </select>
                 </div>
             </div>
@@ -22,16 +22,21 @@
         </div>
     </div>
     <div>
-        <div appMarkReviewedAnnouncement class="container bordercontainer col-md-11 well" *ngFor="let ad of (cars | async | filterBy: searchLocation:searchBrand:searchMaxPrice | sort: sortByKey)" [attr.data-id]="ad.$key">
-            <span class="reviewed-announcement-span hidden"><i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i></span>
-            <div class="col-md-6">
-                <img src="{{ad.image}}" width="350" alt="{{ad.brand}}">
-            </div>
-            <div class="col-md-6">
-                <p name="brand"><strong>{{ad.brand}}</strong></p>
-                <p name="model"><strong>Model:</strong> {{ad.model}}</p>
-                <p name="location"><strong>location:</strong> {{ad.location}}</p>
-                <p name="price"><strong>Price:</strong> {{ad.price}}</p>
+        <div class="row">
+            <pagination-controls (pageChange)="page = $event"> </pagination-controls>
+            <div class="container bordercontainer col-md-11 well" *ngFor="let ad of (cars | async | filterBy: searchLocation:searchBrand:searchMaxPrice | sort: sortByKey | paginate: { itemsPerPage: 5, currentPage: page } )" [attr.data-id]="ad.$key">
+                <span class="reviewed-announcement-span hidden"><i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i></span>
+                <div class="col-md-6">
+                    <img src="{{ad.image}}" width="350" alt="{{ad.brand}}">
+                </div>
+                <div class="col-md-6">
+                    <p name="brand"><strong>{{ad.brand}}</strong></p>
+                    <p name="model"><strong>Model:</strong> {{ad.model}}</p>
+                    <p name="location"><strong>location:</strong> {{ad.location}}</p>
+                    <p name="price"><strong>Price:</strong> {{ad.price}}</p>
+                </div>
             </div>
         </div>
+        <pagination-controls (pageChange)="page = $event"> </pagination-controls>
     </div>
+</div>

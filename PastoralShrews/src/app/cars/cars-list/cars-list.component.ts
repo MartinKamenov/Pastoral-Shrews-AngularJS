@@ -19,6 +19,7 @@ export class CarsListComponent implements OnInit {
   sortByOptions: string[];
   order: string;
   sortByField: string;
+  page = 1;
 
   constructor(
     private router: Router,
