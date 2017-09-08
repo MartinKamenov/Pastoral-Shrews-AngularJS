@@ -8,6 +8,9 @@ import { CarsService } from './cars.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { EditCarComponent } from './edit-car/edit-car.component';
+import { CarsListComponent } from './cars-list/cars-list.component';
+import { SortPipe } from '../share/pipes/sort.pipe';
+import { CarsFilterPipe } from '../share/pipes/cars-filter.pipe';
 
 @NgModule({
   imports: [
@@ -16,9 +19,21 @@ import { EditCarComponent } from './edit-car/edit-car.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [CarsCreateComponent, DashboardComponent, CarDetailsComponent, EditCarComponent],
+  declarations: [
+    CarsCreateComponent,
+    DashboardComponent,
+    CarDetailsComponent,
+    EditCarComponent,
+    CarsListComponent,
+    CarsFilterPipe,
+    SortPipe
+  ],
   providers: [
     CarsService
-  ]
+  ],
+  exports: [
+    SortPipe,
+    CarsFilterPipe
+]
 })
 export class CarsModule { }

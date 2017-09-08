@@ -1,44 +1,31 @@
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-lg-3 col-md-6 col-md-offset-3 col-lg-offset-0"> -->
-<div class="well">
+<div class="search-form-control well">
     <h3 align="center">Search Filter</h3>
     <form class="form-horizontal">
         <div class="form-group">
             <label for="location1" class="control-label">Location</label>
-            <select name="location" [(ngModel)]="model.location" #locationInput=ngModel required class="form-control">>
-                          <option *ngFor="let location of locations" [value]="location">
-                            {{location}}
-                          </option>
-                        </select>
+            <select name="location" [(ngModel)]="model.location" #locationInput=ngModel (change)="onChange($event)" class="form-control">>
+                <option *ngFor="let location of locations" [value]="location">
+                    {{location}}
+                </option>
+            </select>
         </div>
         <div class="form-group">
             <label for="brand" class="control-label">Brand</label>
-            <select name="brand" [(ngModel)]="model.brand" class="form-control" id="brand" required>
-                          <option *ngFor="let brand of brands" [value]="brand">
-                            {{brand}}
-                          </option>
-                        </select>
+            <select name="brand" [(ngModel)]="model.brand" class="form-control" id="brand" (change)="onChange($event)">
+                <option *ngFor="let brand of brands" [value]="brand">
+                    {{brand}}
+                </option>
+            </select>
         </div>
         <div class="form-group">
-            <label for="pricefrom" class="control-label">Min Price</label>
-            <div class="input-group">
-                <div class="input-group-addon" id="basic-addon1">$</div>
-                <input type="text" class="form-control" id="pricefrom" aria-describedby="basic-addon1">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="priceto" class="control-label">Max Price</label>
+            <label for="price" class="control-label">Max Price</label>
             <div class="input-group">
                 <div class="input-group-addon" id="basic-addon2">$</div>
-                <input type="text" class="form-control" id="priceto" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" name=price (input)="onInput($event)">
             </div>
         </div>
         <p class="text-center">
-            <a href="#" class="btn btn-info glyphicon glyphicon-search" role="button"></a>
+            <a class="btn btn-info glyphicon glyphicon-search" role="button" (click)="findRecords()"></a>
         </p>
     </form>
 </div>
-<!-- </div>
-                </div>
-            </div> -->

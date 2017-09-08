@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-sm-5">
+        </div>
+        <div class="col-xs-6 col-sm-4">
+            <div class="row" style="padding-top: 20px">
+                <div class="col-xs-6 col-sm-4">
+                    <label for="sortBy">Sort by:</label>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                    <select class="form-control" id="sortBy" (change)="onSortByChange($event)">
+                      <option *ngFor="let sortBy of sortByOptions" [selected]="sortByOptions === sortBy" value="{{sortBy}}">{{sortBy}}</option>
+                  </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-2" style="padding-top: 20px">
+            <select class="form-control" id="order" (change)="onOrderChange($event)">
+              <option [selected]="order === 'asc'">asc</option>
+              <option [selected]="order === 'desc'">desc</option>
+          </select>
+        </div>
+    </div>
+    <div>
+        <div appMarkReviewedAnnouncement class="container bordercontainer col-md-11 well" *ngFor="let ad of (cars | async | filterBy: searchLocation:searchBrand:searchMaxPrice | sort: sortByKey)" [attr.data-id]="ad.$key">
+            <span class="reviewed-announcement-span hidden"><i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i></span>
+            <div class="col-md-6">
+                <img src="{{ad.image}}" width="350" alt="{{ad.brand}}">
+            </div>
+            <div class="col-md-6">
+                <p name="brand"><strong>{{ad.brand}}</strong></p>
+                <p name="model"><strong>Model:</strong> {{ad.model}}</p>
+                <p name="location"><strong>location:</strong> {{ad.location}}</p>
+                <p name="price"><strong>Price:</strong> {{ad.price}}</p>
+            </div>
+        </div>
+    </div>

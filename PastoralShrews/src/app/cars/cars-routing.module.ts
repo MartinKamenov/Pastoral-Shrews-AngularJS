@@ -5,11 +5,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from '../core/auth.guard';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { EditCarComponent } from './edit-car/edit-car.component';
+import { CarsListComponent } from './cars-list/cars-list.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'all', pathMatch: 'full' },
   { path: 'create', component: CarsCreateComponent, canActivate: [AuthGuard]},
   { path: 'profile', component: DashboardComponent, canActivate: [AuthGuard]},
+  { path: 'all', component: CarsListComponent},
   { path: 'details/:id', component: CarDetailsComponent, canActivate: [AuthGuard] },
   { path: 'edit/:id', component: EditCarComponent, canActivate: [AuthGuard] },
 
