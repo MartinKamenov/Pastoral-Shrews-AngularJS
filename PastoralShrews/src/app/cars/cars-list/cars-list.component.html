@@ -5,10 +5,10 @@
         <div class="col-xs-6 col-sm-4">
             <div class="row" style="padding-top: 20px">
                 <div class="col-xs-6 col-sm-4">
-                    <label for="sortBy">Sort by:</label>
+                    <label class="sortByLabel" for="sortBy">Sort by:</label>
                 </div>
                 <div class="col-xs-6 col-sm-8">
-                    <select class="form-control" id="sortBy" (change)="onSortByChange($event)">
+                    <select class="form-control" id="sortBy" name="sortBy" (change)="onSortByChange($event)">
                       <option *ngFor="let sortBy of sortByOptions"  value="{{sortBy}}">{{sortBy}}</option>
                   </select>
                 </div>
@@ -24,20 +24,22 @@
     <div>
         <div class="row">
             <pagination-controls (pageChange)="page = $event"> </pagination-controls>
-            <div class="container bordercontainer col-md-11 well" *ngFor="let car of (cars | async | filterBy: searchLocation:searchBrand:searchMaxPrice | sort: sortByKey | paginate: { itemsPerPage: 5, currentPage: page } )" [attr.data-id]="car.$key">
-                <span class="reviewed-announcement-span hidden"><i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i></span>
-                <div class="col-md-6">
-                    <a routerLink="/cars/details/{{car.$key}}" routerLinkActive="active">
+            <a routerLink="/cars/details/{{car.$key}}" routerLinkActive="active" *ngFor="let car of (cars | async | filterBy: searchLocation:searchBrand:searchMaxPrice | sort: sortByKey | paginate: { itemsPerPage: 5, currentPage: page } )" [attr.data-id]="car.$key">
+                <div class="container bordercontainer col-md-11 well grey orangeBorder">
+                    <span class="reviewed-announcement-span hidden"><i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i></span>
+                    <div class="col-md-6">
+
                         <img src="{{car.image}}" width="350" alt="{{car.brand}}">
-                    </a>
+
+                    </div>
+                    <div class="col-md-6">
+                        <h2 name="brand"><strong>{{car.brand}}</strong></h2>
+                        <p name="model"><strong>Model:</strong> {{car.model}}</p>
+                        <p name="location"><strong>location:</strong> {{car.location}}</p>
+                        <p name="price"><strong>Price:</strong> {{car.price | currency:'USD':true:'1.0-2'}}</p>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <p name="brand"><strong>{{car.brand}}</strong></p>
-                    <p name="model"><strong>Model:</strong> {{car.model}}</p>
-                    <p name="location"><strong>location:</strong> {{car.location}}</p>
-                    <p name="price"><strong>Price:</strong> {{car.price | currency:'USD':true:'1.0-2'}}</p>
-                </div>
-            </div>
+            </a>
         </div>
         <pagination-controls (pageChange)="page = $event"> </pagination-controls>
     </div>

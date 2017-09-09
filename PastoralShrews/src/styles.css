@@ -18,12 +18,20 @@ body {
     background-color: #333 !important;
 }
 
+.card:hover {
+    background-color: #555 !important;
+}
+
 .well {
     color: black;
 }
 
 .container-fluid {
     background-color: orangered;
+}
+
+.container-fluid a:hover {
+    background-color: darkred !important;
 }
 
 .container-fluid a {
@@ -43,6 +51,15 @@ tbody {
     color: white;
 }
 
+.orangeBorder {
+    border: 1px solid darkorange !important;
+    border-radius: 1% !important;
+}
+
+.orangeBorder:hover {
+    background-color: #555 !important;
+}
+
 .comment {
     border: 1px solid darkorange;
     border-radius: 1%;
@@ -56,7 +73,7 @@ tbody {
 }
 
 .ngx-pagination a:hover {
-    background-color: black !important;
+    background-color: #555 !important;
     color: white !important;
 }
 
@@ -64,4 +81,8 @@ tbody {
     body {
         padding-top: 56px;
     }
+}
+
+.sortByLabel {
+    font-size: 25px;
 }
