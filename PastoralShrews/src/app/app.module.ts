@@ -1,3 +1,4 @@
+import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -57,7 +58,8 @@ import { HighlightDirective } from './hightlight.directive';
     FormsModule,
     RoutingModule,
     ToasterModule,
-    CarsModule
+    CarsModule,
+    NgxPaginationModule
   ],
   exports: [
     HighlightDirective
