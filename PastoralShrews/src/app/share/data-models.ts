@@ -36,6 +36,22 @@ export const brands = [
     'VW'
 ];
 
+export const types = [
+    'Car',
+    'Motorcycle'
+];
+
+export const motorcycleBrands = [
+    'Kawasaki',
+    'Yamaha',
+    'Suzuki',
+    'BMW',
+    'Harley Davidson',
+    'KTM',
+    'Ducati',
+    'MV Agusta',
+    'Honda',
+];
 
 export const engines = [
     'Benzin',

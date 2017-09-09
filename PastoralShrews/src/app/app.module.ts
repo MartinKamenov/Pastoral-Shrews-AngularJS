@@ -1,3 +1,4 @@
+import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -55,7 +56,8 @@ import { AdvancedSearchComponent } from './advanced-search/advanced-search.compo
     FormsModule,
     RoutingModule,
     ToasterModule,
-    CarsModule
+    CarsModule,
+    NgxPaginationModule
   ],
   providers: [AuthService, FilterService],
   bootstrap: [AppComponent]

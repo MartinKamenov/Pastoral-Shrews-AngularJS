@@ -4,6 +4,7 @@ import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable }
 import { FilterService } from './../home/search/home-search.service';
 import { CarsService } from './../cars/cars.service';
 import { ICar } from './../cars/cars.models';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
     selector: 'advanced-search',
@@ -15,6 +16,7 @@ import { ICar } from './../cars/cars.models';
 export class AdvancedSearchComponent implements OnInit {
     cars: Array<ICar>;
     filteredCars = this.cars;
+    page = 1;
 
     constructor(public carsService: CarsService, public filterService: FilterService) {
 
