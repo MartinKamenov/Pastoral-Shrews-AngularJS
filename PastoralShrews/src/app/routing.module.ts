@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cars', loadChildren: './cars/cars.module#CarsModule'},
   { path: 'search', component: SearchFilterComponent },
+  { path: 'advanced-search', component:  AdvancedSearchComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 

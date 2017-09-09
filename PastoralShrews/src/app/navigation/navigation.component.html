@@ -6,10 +6,9 @@
         <ul class="nav navbar-nav">
             <li><a routerLink="/" routerLinkActive="active">Home</a></li>
             <li *ngIf="auth.currentUser"><a routerLink="/cars/create" routerLinkActive="active">Create New Car</a></li>
-            <!-- <li *ngIf="auth.currentUser"><a routerLink="/search">Advanced Search</a></li> -->
+            <li *ngIf="auth.currentUser"><a routerLink="/advanced-search">Advanced Search</a></li>
             <li>
-                <!-- <home-search (changed)="filterChanged($event)"></home-search>
-                <home-search></home-search> -->
+                
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
