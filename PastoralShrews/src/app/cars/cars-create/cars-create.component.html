@@ -106,7 +106,7 @@
                     <br>
                     <div class="col-md-8">
                         <div class="form-group">
-                            <label for="image">Image</label>
+                            <label for="image">Image URL</label>
                             <input type="text" name="image" [(ngModel)]="model.image" #imageInput=ngModel required class="form-control">
                             <span [hidden]="imageInput.valid || imageInput.pristine">
                                     Image is required!
@@ -120,3 +120,4 @@
         </div>
     </div>
 </div>
+<app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>

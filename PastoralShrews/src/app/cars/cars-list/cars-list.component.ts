@@ -20,6 +20,8 @@ export class CarsListComponent implements OnInit {
   order: string;
   sortByField: string;
   page = 1;
+  showSpinner: boolean = true;
+
 
   constructor(
     private router: Router,
@@ -36,6 +38,7 @@ export class CarsListComponent implements OnInit {
     this.searchBrand = this.route.snapshot.params['brand'];
     this.searchMaxPrice = +this.route.snapshot.params['price'];
     this.cars = this.carsService.getCarsList();
+    this.cars.subscribe(() => this.showSpinner = false);
 
   }
   onSortByChange(e: any) {

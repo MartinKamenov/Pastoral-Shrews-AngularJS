@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
 car: ICar = new ICar();
 carsList: FirebaseListObservable<ICar[]>;
 page = 1;
+showSpinner: boolean = true;
   constructor(public auth: AuthService, private carSrv: CarsService) { }
 
   ngOnInit() {
@@ -23,6 +24,7 @@ page = 1;
         equalTo: this.auth.currentUserEmail
       }
     );
+    this.carsList.subscribe(() => this.showSpinner = false);
     console.log(this.carsList);
      }
   deleteCar(carToDelete) {

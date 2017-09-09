@@ -28,6 +28,7 @@ import { HomeSearchComponent } from './home/search/home-search.component';
 
 import { FilterService } from './home/search/home-search.service';
 import { FooterComponent } from './footer/footer.component';
+// import { LoadingSpinnerComponent } from './share/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { FooterComponent } from './footer/footer.component';
     PageNotFoundComponent,
     SearchFilterComponent,
     HomeSearchComponent,
-    FooterComponent
+    FooterComponent,
+    // LoadingSpinnerComponent
 ],
   imports: [
     BrowserModule,
