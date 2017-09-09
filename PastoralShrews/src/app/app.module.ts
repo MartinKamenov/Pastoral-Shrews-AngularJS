@@ -29,6 +29,7 @@ import { HomeSearchComponent } from './home/search/home-search.component';
 import { FilterService } from './home/search/home-search.service';
 import { FooterComponent } from './footer/footer.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
+import { HighlightDirective } from './hightlight.directive';
 // import { LoadingSpinnerComponent } from './share/loading-spinner/loading-spinner.component';
 
 @NgModule({
@@ -42,7 +43,8 @@ import { AdvancedSearchComponent } from './advanced-search/advanced-search.compo
     SearchFilterComponent,
     HomeSearchComponent,
     FooterComponent,
-    AdvancedSearchComponent
+    AdvancedSearchComponent,
+    HighlightDirective
     // LoadingSpinnerComponent
 ],
   imports: [
@@ -56,6 +58,9 @@ import { AdvancedSearchComponent } from './advanced-search/advanced-search.compo
     RoutingModule,
     ToasterModule,
     CarsModule
+  ],
+  exports: [
+    HighlightDirective
   ],
   providers: [AuthService, FilterService],
   bootstrap: [AppComponent]

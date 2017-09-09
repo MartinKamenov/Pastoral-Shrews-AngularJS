@@ -15,9 +15,11 @@ import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable }
 export class HomeComponent implements OnInit {
   cars: Array<ICar> = [];
   filteredCars = this.cars;
-    showSpinner: boolean = true;
+    showSpinner: boolean;
 
-  constructor(public carsService: CarsService) { }
+  constructor(public carsService: CarsService) {
+    this.showSpinner = true;
+   }
 
   getCars() {
     this.carsService.getCarsList({
