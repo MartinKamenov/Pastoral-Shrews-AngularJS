@@ -26,9 +26,10 @@
         <div class="create-comment">
             <form (ngSubmit)="addComent(mycomment.value.comment)" #mycomment="ngForm" novalidate>
                 <div class="form-group">
-                    <input type="text" name="comment" [(ngModel)]="comment" class="form-control">
+                    <label for="comment">Add new comment</label>
+                    <input type="text" name="comment" placeholder="Put your comment here..." [(ngModel)]="comment" class="form-control">
                 </div>
-                <input class="button btn btn-success" type="submit">
+                <button class="button btn btn-success" type="submit" [disabled]="validateForm(mycomment.value.comment)">Send</button>
             </form>
         </div>
         <div>

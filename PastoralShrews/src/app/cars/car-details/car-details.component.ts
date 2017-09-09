@@ -53,4 +53,12 @@ export class CarDetailsComponent implements OnInit {
   logObject(object: any) {
     console.log(object);
   }
+
+  validateForm(comment: string) {
+    if (comment) {
+      return false;
+    }
+
+    return true;
+  }
 }
