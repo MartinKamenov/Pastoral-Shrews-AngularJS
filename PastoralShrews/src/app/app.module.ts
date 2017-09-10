@@ -34,6 +34,8 @@ import { CauroselComponent } from './home/caurosel/caurosel.component';
 import { LastCarsComponent } from './home/last-cars/last-cars.component';
 // import { LoadingSpinnerComponent } from './share/loading-spinner/loading-spinner.component';
 
+import { AdvancedSearchModule } from './advanced-search/advanced-search.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,13 +45,10 @@ import { LastCarsComponent } from './home/last-cars/last-cars.component';
     LoginComponent,
     PageNotFoundComponent,
     SearchFilterComponent,
-    AdvancedSearchComponent,
     FooterComponent,
-    AdvancedSearchComponent,
     HighlightDirective,
     CauroselComponent,
-    LastCarsComponent,
-    FilterComponent
+    LastCarsComponent
     // LoadingSpinnerComponent
 ],
   imports: [
@@ -63,12 +62,12 @@ import { LastCarsComponent } from './home/last-cars/last-cars.component';
     RoutingModule,
     ToasterModule,
     CarsModule,
-    NgxPaginationModule
+    AdvancedSearchModule
   ],
   exports: [
     HighlightDirective
   ],
-  providers: [AuthService, FilterService],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

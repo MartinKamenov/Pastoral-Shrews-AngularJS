@@ -9,12 +9,13 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './cars-list.component.html',
   styleUrls: ['./cars-list.component.css']
 })
+
 export class CarsListComponent implements OnInit {
   searchType: any;
   searchBrand: any;
   searchLocation: any;
   searchMaxPrice: number;
- cars: FirebaseListObservable<ICar[]>;
+  cars: FirebaseListObservable<ICar[]>;
   sortBy: string;
   sortByKey: string;
   sortByOptions: string[];
@@ -23,12 +24,12 @@ export class CarsListComponent implements OnInit {
   page = 1;
   showSpinner = true;
 
-
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private carsService: CarsService,
   ) { }
+
   ngOnInit() {
     this.sortByOptions = ['date', 'location', 'brand', 'price'];
     this.sortBy = 'date';
@@ -41,8 +42,8 @@ export class CarsListComponent implements OnInit {
     this.searchMaxPrice = +this.route.snapshot.params['price'];
     this.cars = this.carsService.getCarsList();
     this.cars.subscribe(() => this.showSpinner = false);
-
   }
+
   onSortByChange(e: any) {
     this.sortBy = e.target.value;
     if (this.sortBy === 'date') {
@@ -68,5 +69,4 @@ export class CarsListComponent implements OnInit {
       this.sortByKey = '-' + this.sortByField;
     }
   }
-
 }
