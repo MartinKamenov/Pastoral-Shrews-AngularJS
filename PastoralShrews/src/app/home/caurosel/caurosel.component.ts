@@ -9,11 +9,13 @@ import { ICar } from '../../cars/cars.models';
   '../../../assets/css/shop-homepage.css']
 })
 export class CauroselComponent implements OnInit {
-  @Input() cars: ICar;
+  @Input() cars: any;
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
+    console.log(this.cars);
   }
 
 }

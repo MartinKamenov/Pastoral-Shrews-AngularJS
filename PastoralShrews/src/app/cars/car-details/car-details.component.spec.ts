@@ -17,7 +17,6 @@ describe('CarDetailsComponent', () => {
   }));
 
   beforeEach(() => {
-    const fb = new FormBuilder();
     fixture = TestBed.createComponent(CarDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
