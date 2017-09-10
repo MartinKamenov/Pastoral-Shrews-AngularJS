@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ICar } from '../cars/cars.models';
-import { brands, locations } from './../share/data-models';
+import { brands, locations, types } from './../share/data-models';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,8 +12,10 @@ export class SearchFilterComponent implements OnInit {
   model= new ICar();
   brands= brands;
   locations = locations;
+  types= types;
 
   searchLocation: string;
+  searchType: string;
   searchBrand: string;
   searchPrice: string;
   constructor(private router: Router) { }
@@ -26,6 +28,8 @@ export class SearchFilterComponent implements OnInit {
       this.searchLocation = e.target.value;
     } else if (e.target.name === 'brand') {
       this.searchBrand = e.target.value;
+    } else if (e.target.name === 'type') {
+      this.searchType = e.target.value;
     }
   }
   onInput(e: any) {
@@ -35,6 +39,9 @@ export class SearchFilterComponent implements OnInit {
   }
   findRecords() {
     const queryParams = {};
+    if (this.searchType && this.searchType !== '') {
+      queryParams['type'] = this.searchType;
+    }
 
     if (this.searchLocation && this.searchLocation !== '') {
       queryParams['location'] = this.searchLocation;

@@ -24,7 +24,7 @@
     <div>
         <div class="row">
             <pagination-controls (pageChange)="page = $event"> </pagination-controls>
-            <a routerLink="/cars/details/{{car.$key}}" routerLinkActive="active" *ngFor="let car of (cars | async | filterBy: searchLocation:searchBrand:searchMaxPrice | sort: sortByKey | paginate: { itemsPerPage: 5, currentPage: page } )" [attr.data-id]="car.$key">
+            <a routerLink="/cars/details/{{car.$key}}" routerLinkActive="active" *ngFor="let car of (cars | async | filterBy: searchType:searchLocation:searchBrand:searchMaxPrice | sort: sortByKey | paginate: { itemsPerPage: 5, currentPage: page } )" [attr.data-id]="car.$key">
                 <div class="container bordercontainer col-md-11 well grey orangeBorder greyHover">
                     <span class="reviewed-announcement-span hidden"><i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i></span>
                     <div class="col-md-6">

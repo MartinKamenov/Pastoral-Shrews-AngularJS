@@ -10,6 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./cars-list.component.css']
 })
 export class CarsListComponent implements OnInit {
+  searchType: any;
   searchBrand: any;
   searchLocation: any;
   searchMaxPrice: number;
@@ -34,6 +35,7 @@ export class CarsListComponent implements OnInit {
     this.sortByField = '$key';
     this.sortByKey = '-$key';
     this.order = 'desc';
+    this.searchType = this.route.snapshot.params['type'];
     this.searchLocation = this.route.snapshot.params['location'];
     this.searchBrand = this.route.snapshot.params['brand'];
     this.searchMaxPrice = +this.route.snapshot.params['price'];

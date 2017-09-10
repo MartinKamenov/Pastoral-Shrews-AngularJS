@@ -27,11 +27,10 @@ export class HomeComponent implements OnInit {
       limitToLast: 6
   })
       .subscribe(cars => {
+        cars.reverse();
         this.cars = cars;
         this.showSpinner = false;
       });
-
-
   }
 
   ngOnInit() {

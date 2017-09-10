@@ -17,7 +17,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let car of (carsList | async | paginate: { itemsPerPage: 5, currentPage: page })" class="grey">
+                        <tr *ngFor="let car of (cars | paginate: { itemsPerPage: 5, currentPage: page })" class="grey">
                             <td class="img-data"><img src={{car.image}} width="100px"></td>
                             <td> {{car.brand}}</td>
                             <td> {{car.model}}</td>
