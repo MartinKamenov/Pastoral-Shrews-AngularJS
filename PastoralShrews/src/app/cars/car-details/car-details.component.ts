@@ -13,14 +13,13 @@ import { AuthService } from '../../core/auth.service';
   styleUrls: ['./car-details.component.css']
 })
 export class CarDetailsComponent implements OnInit {
-
   carKey: string;
-
   myDBForm: FormGroup;
   // curentCar: FirebaseObjectObservable<ICar>;
-
   car: ICar;
   comment: string;
+  currency: string;
+  currencyKey: string;
 
   constructor(
     private fb: FormBuilder,
@@ -35,6 +34,9 @@ export class CarDetailsComponent implements OnInit {
     this.carKey = this.route.snapshot.params['id'];
     this.carsService.getCar(this.carKey)
     .subscribe((car: ICar) => this.car = car);
+
+    this.currency = 'USD';
+    this.currencyKey = 'USD';
   }
 
   addComent(commentText: string) {
@@ -62,4 +64,16 @@ export class CarDetailsComponent implements OnInit {
 
     return true;
   }
+
+
+  onCurrencyChange(e: any) {
+    this.currency = e.target.value;
+    this.currencyKey = 'USD';
+    if (this.currency === 'EUR') {
+      this.currencyKey = 'EUR';
+    }
+  }
+
+
+
 }

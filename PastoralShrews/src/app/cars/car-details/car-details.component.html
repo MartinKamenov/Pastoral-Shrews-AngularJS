@@ -1,4 +1,12 @@
 <div class="container">
+    <div class="col-md-2 col-md-offset-9">
+        <select class="form-control" id="curency" (change)="onCurrencyChange($event)">
+            <option [selected]="currency === 'USD'">USD</option>
+            <option [selected]="currency === 'EUR'">EUR</option>
+        </select>
+    </div>
+    <br>
+    <br>
     <div class="col-md-10 col-md-offset-1 ">
         <div class="row well grey">
             <div class="col-lg-8 col-md-8 col-sm-8 ">
@@ -18,7 +26,8 @@
                     <li> <span>Engine</span> <strong>{{car.engine}}</strong></li>
                     <li> <span>Transmission</span> <strong>{{car.transmission}}</strong></li>
                     <li> <span>Color</span> <strong>{{car.color}}</strong></li>
-                    <li> <span>Price</span> <strong>{{car.price | showInEuros}}<span>&#8364;</span></strong></li>
+                    <li *ngIf="currencyKey == 'EUR'"> <span>Price</span> <strong>{{car.price | showInEuros}}<span>&#8364;</span></strong></li>
+                    <li *ngIf="currencyKey == 'USD'"> <span>Price</span> <strong>{{car.price | currency:'USD':true:'1.0-2'}}</strong></li>
                     <li> <strong>{{car.timeStamp | date:'medium'}}</strong></li>
                 </ul>
             </div>
@@ -34,7 +43,7 @@
             </form>
         </div>
         <div>
-            <div class="grey comment" *ngFor="let comment of car.comments">
+            <div class="grey comment" *ngFor="let comment of car?.comments">
                 <div>
                     <p>{{comment.userEmail}}</p>
                     <p>{{ comment.date | date:'medium'}}</p>
