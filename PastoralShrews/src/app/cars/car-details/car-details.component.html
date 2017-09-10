@@ -18,7 +18,7 @@
                     <li> <span>Engine</span> <strong>{{car.engine}}</strong></li>
                     <li> <span>Transmission</span> <strong>{{car.transmission}}</strong></li>
                     <li> <span>Color</span> <strong>{{car.color}}</strong></li>
-                    <li> <span>Price</span> <strong>{{car.price | currency:'USD':true:'1.0-2'}}</strong></li>
+                    <li> <span>Price</span> <strong>{{car.price | showInEuros}}<span>&#8364;</span></strong></li>
                 </ul>
             </div>
         </div>

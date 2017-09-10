@@ -13,6 +13,7 @@ import { SortPipe } from '../share/pipes/sort.pipe';
 import { CarsFilterPipe } from '../share/pipes/cars-filter.pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { LoadingSpinnerComponent } from '../share/loading-spinner/loading-spinner.component';
+import { FormatFileSizePipe } from '../share/pipes/change-valute.pipe';
 
 @NgModule({
   imports: [
@@ -30,12 +31,14 @@ import { LoadingSpinnerComponent } from '../share/loading-spinner/loading-spinne
     CarsListComponent,
     CarsFilterPipe,
     SortPipe,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    FormatFileSizePipe
   ],
   providers: [
     CarsService
   ],
-  exports: [LoadingSpinnerComponent]
+  exports: [LoadingSpinnerComponent,
+  FormatFileSizePipe]
 
 })
 export class CarsModule { }
