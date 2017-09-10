@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output, Input, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'home-search',
+    selector: 'app-home-search',
     templateUrl: './home-search.component.html'
 })
 

@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
 car: ICar = new ICar();
 cars: Array<ICar> = [];
 page = 1;
-showSpinner: boolean = true;
+showSpinner = true;
   constructor(public auth: AuthService, private carSrv: CarsService) { }
 
   ngOnInit() {

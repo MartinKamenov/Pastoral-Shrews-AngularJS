@@ -7,7 +7,7 @@ import { ICar } from './../cars/cars.models';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
-    selector: 'advanced-search',
+    selector: 'app-advanced-search',
     templateUrl: './advanced-search.component.html',
     styleUrls: ['../../assets/vendor/bootstrap/css/bootstrap.css',
     '../../assets/css/shop-homepage.css']
