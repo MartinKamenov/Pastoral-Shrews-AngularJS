@@ -10,8 +10,14 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="brand">Brand</label>
-                            <select name="brand" class="form-control" id="brand" #brand formControlName="brand" required>
+                            <select name="brand" class="form-control" id="brand" #brand formControlName="brand" required *ngIf="car.type == 'Car'">
                             <option *ngFor="let brand of brands" [value]="brand">
+                              {{brand}}
+                            </option>
+                          </select>
+
+                          <select name="brand" class="form-control" id="brand" #brand formControlName="brand" required *ngIf="car.type == 'Motorcycle'">
+                            <option *ngFor="let brand of motorcycleBrands" [value]="brand">
                               {{brand}}
                             </option>
                           </select>

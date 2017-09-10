@@ -5,7 +5,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { Observable } from 'rxjs/Observable';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ICar } from '../cars.models';
-import {brands, engines, transmissions, locations} from '../../share/data-models';
+import {brands, engines, transmissions, locations, types, motorcycleBrands } from '../../share/data-models';
 
 import 'rxjs/add/operator/switchMap';
 
@@ -16,10 +16,11 @@ import 'rxjs/add/operator/switchMap';
 })
 export class EditCarComponent implements OnInit {
   brands= brands;
- locations = locations;
-engines = engines;
-transmissions = transmissions;
-private model: FormControl;
+  motorcycleBrands = motorcycleBrands;
+  locations = locations;
+  engines = engines;
+  transmissions = transmissions;
+  private model: FormControl;
 
   myDBForm: FormGroup;
   selectedFile: any;
@@ -51,7 +52,10 @@ private model: FormControl;
           engine: [car.engine, Validators.required],
           image: [car.image, Validators.required],
           price: [car.price, Validators.required],
+          type: [car.type, Validators.required],
         });
+
+        console.log(car.type);
       });
 
 
