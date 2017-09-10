@@ -23,6 +23,8 @@ export class CarsCreateComponent {
      private router: Router,
     private route: ActivatedRoute) { }
   create(carDb: ICar) {
+    const date = new Date().getTime();
+    carDb.timeStamp = date;
     this.carsService.createCar(carDb);
 
     this.router.navigate(['cars/profile']);

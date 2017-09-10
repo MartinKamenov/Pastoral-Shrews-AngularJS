@@ -23,11 +23,10 @@ export class HomeComponent implements OnInit {
   getCars() {
     this.showSpinner = true;
     this.carsService.getCarsList({
-      orderByKey: false,
+      orderByChild: 'timeStamp',
       limitToLast: 6
   })
       .subscribe(cars => {
-        console.log(cars);
         this.cars = cars;
         this.showSpinner = false;
       });

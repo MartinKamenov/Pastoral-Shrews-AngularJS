@@ -57,6 +57,7 @@ export const engines = [
     'Benzin',
     'Diesel',
     'Electric',
+    'Hybrid',
     'LPG',
     'Natural Gas'
    ];
