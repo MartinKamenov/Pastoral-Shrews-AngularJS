@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let car of cars">
+        <div myHighlight class="card h-100 orangeBorder">
+            <a routerLink="/cars/details/{{car.$key}}" routerLinkActive="active"><img class="card-img-top" [src]="car.image" alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a routerLink="/cars/details/{{car.$key}}" routerLinkActive="active"></a>
+                </h4>
+                <h5>Price: {{car.price| currency:'USD':true:'1.0-2'}}</h5>
+                <p class="card-text">{{car.brand}} {{car.model}}</p>
+                <p>Location: {{car.location}}</p>
+            </div>
+        </div>
+    </div>
+</div>

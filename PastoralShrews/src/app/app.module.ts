@@ -31,6 +31,8 @@ import { FilterService } from './home/search/home-search.service';
 import { FooterComponent } from './footer/footer.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import { HighlightDirective } from './hightlight.directive';
+import { CauroselComponent } from './home/caurosel/caurosel.component';
+import { LastCarsComponent } from './home/last-cars/last-cars.component';
 // import { LoadingSpinnerComponent } from './share/loading-spinner/loading-spinner.component';
 
 @NgModule({
@@ -45,7 +47,9 @@ import { HighlightDirective } from './hightlight.directive';
     HomeSearchComponent,
     FooterComponent,
     AdvancedSearchComponent,
-    HighlightDirective
+    HighlightDirective,
+    CauroselComponent,
+    LastCarsComponent
     // LoadingSpinnerComponent
 ],
   imports: [

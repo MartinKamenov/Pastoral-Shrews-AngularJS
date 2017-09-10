@@ -9,8 +9,8 @@ import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable }
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['../../assets/vendor/bootstrap/css/bootstrap.css',
-  '../../assets/css/shop-homepage.css']
+  // styleUrls: ['../../assets/vendor/bootstrap/css/bootstrap.css',
+  // '../../assets/css/shop-homepage.css']
 })
 export class HomeComponent implements OnInit {
   cars: Array<ICar> = [];
@@ -18,12 +18,12 @@ export class HomeComponent implements OnInit {
     showSpinner: boolean;
 
   constructor(public carsService: CarsService) {
-    this.showSpinner = true;
-   }
+  }
 
   getCars() {
+    this.showSpinner = true;
     this.carsService.getCarsList({
-      orderByChild: 'timeStamp',
+      orderByKey: false,
       limitToLast: 6
   })
       .subscribe(cars => {
