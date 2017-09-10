@@ -10,25 +10,25 @@
     <div class="col-md-10 col-md-offset-1 ">
         <div class="row well grey">
             <div class="col-lg-8 col-md-8 col-sm-8 ">
-                <img class="img-responsive" [src]="car.image" alt="">
+                <img class="img-responsive" [src]="car?.image" alt="">
                 <div>
                     <h4>Description:</h4>
-                    <hr> {{car.description}}
+                    <hr> {{car?.description}}
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <h4>Key Features</h4>
                 <ul>
-                    <li> <span>Brand</span> <strong>{{car.brand}}</strong></li>
-                    <li> <span>Model</span> <strong>{{car.model}}</strong></li>
-                    <li> <span>Year</span> <strong>{{car.year}}</strong></li>
-                    <li> <span>Power</span> <strong>{{car.power}}</strong></li>
-                    <li> <span>Engine</span> <strong>{{car.engine}}</strong></li>
-                    <li> <span>Transmission</span> <strong>{{car.transmission}}</strong></li>
-                    <li> <span>Color</span> <strong>{{car.color}}</strong></li>
-                    <li *ngIf="currencyKey == 'EUR'"> <span>Price</span> <strong>{{car.price | showInEuros}}<span>&#8364;</span></strong></li>
-                    <li *ngIf="currencyKey == 'USD'"> <span>Price</span> <strong>{{car.price | currency:'USD':true:'1.0-2'}}</strong></li>
-                    <li> <strong>{{car.timeStamp | date:'medium'}}</strong></li>
+                    <li> <span>Brand</span> <strong>{{car?.brand}}</strong></li>
+                    <li> <span>Model</span> <strong>{{car?.model}}</strong></li>
+                    <li> <span>Year</span> <strong>{{car?.year}}</strong></li>
+                    <li> <span>Power</span> <strong>{{car?.power}}</strong></li>
+                    <li> <span>Engine</span> <strong>{{car?.engine}}</strong></li>
+                    <li> <span>Transmission</span> <strong>{{car?.transmission}}</strong></li>
+                    <li> <span>Color</span> <strong>{{car?.color}}</strong></li>
+                    <li *ngIf="currencyKey == 'EUR'"> <span>Price</span> <strong>{{car?.price | showInEuros}}<span>&#8364;</span></strong></li>
+                    <li *ngIf="currencyKey == 'USD'"> <span>Price</span> <strong>{{car?.price | currency:'USD':true:'1.0-2'}}</strong></li>
+                    <li> <strong>{{car?.timeStamp | date:'medium'}}</strong></li>
                 </ul>
             </div>
         </div>
