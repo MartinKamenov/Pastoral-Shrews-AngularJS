@@ -16,4 +16,5 @@ export class ICar {
        price: string;
        timeStamp: number;
        comments: Array<IComment>;
+       type: string;
     }

@@ -7,14 +7,30 @@
                     <h3 class="no-top-margin">
                         Create New Car Offer</h3>
                     <hr>
+
+                    <div class="form-group">
+                        <label for="type">Type</label>
+                        <select name="type" [(ngModel)]="type" class="form-control" id="type" required (change)="getType(type)">
+                        <option *ngFor="let type of types" [value]="type" >
+                          {{type}}
+                        </option>
+                      </select>
+                    </div>
+
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="brand">Brand</label>
-                            <select name="brand" [(ngModel)]="model.brand" class="form-control" id="brand" required>
-                            <option *ngFor="let brand of brands" [value]="brand">
-                              {{brand}}
-                            </option>
-                          </select>
+                            <select name="brand" [(ngModel)]="model.brand" class="form-control" id="brand" required *ngIf="type == 'Car'"> 
+                                <option *ngFor="let brand of brands" [value]="brand" >
+                                    {{brand}}
+                                 </option>
+                            </select>
+
+                            <select name="brand" [(ngModel)]="model.brand" class="form-control" id="brand" required *ngIf="type == 'Motorcycle'"> 
+                                <option *ngFor="let brand of motorcycleBrands" [value]="brand" >
+                                  {{brand}}
+                                </option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4">
