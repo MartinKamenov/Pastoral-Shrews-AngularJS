@@ -15,7 +15,7 @@ export class CauroselComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log(this.cars);
+    // console.log(this.cars);
   }
 
 }

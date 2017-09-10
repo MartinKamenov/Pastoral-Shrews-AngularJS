@@ -33,6 +33,6 @@ this.carSrv.getCarsList(
     this.carSrv.deleteCar(carToDelete);
   }
   editCar(carToEdit) {
-    console.log(carToEdit);
+    // console.log(carToEdit);
   }
 }

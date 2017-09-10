@@ -37,6 +37,6 @@ export class CarsCreateComponent {
 
   getType(type) {
     this.type = type;
-    console.log(this.type);
+    // console.log(this.type);
   }
 }

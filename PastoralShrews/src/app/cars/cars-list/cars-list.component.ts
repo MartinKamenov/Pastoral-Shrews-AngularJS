@@ -46,7 +46,7 @@ export class CarsListComponent implements OnInit {
   onSortByChange(e: any) {
     this.sortBy = e.target.value;
     if (this.sortBy === 'date') {
-      this.sortByField = '$key';
+      this.sortByField = 'timeStamp';
     } else if (this.sortBy === 'location') {
       this.sortByField = 'location';
     } else if (this.sortBy === 'brand') {

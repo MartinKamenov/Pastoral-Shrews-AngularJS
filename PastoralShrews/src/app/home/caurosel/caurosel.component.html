@@ -6,13 +6,13 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="carousel-item active" *ngIf="cars.length > 0">
-            <img class="d-block img-fluid" [src]="cars[0].image" alt="First slide" width="900px" height="300px">
+            <img class="d-block img-fluid" [src]="cars[0]?.image" alt="First slide" width="900px" height="300px">
         </div>
         <div class="carousel-item" *ngIf="cars.length > 1">
-            <img class="d-block img-fluid" [src]="cars[1].image" alt="Second slide" width="900px" height="300px">
+            <img class="d-block img-fluid" [src]="cars[1]?.image" alt="Second slide" width="900px" height="300px">
         </div>
         <div class="carousel-item" *ngIf="cars.length > 2">
-            <img class="d-block img-fluid" [src]="cars[2].image" alt="Third slide" width="900px" height="300px">
+            <img class="d-block img-fluid" [src]="cars[2]?.image" alt="Third slide" width="900px" height="300px">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

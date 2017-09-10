@@ -52,7 +52,7 @@ export class CarDetailsComponent implements OnInit {
   this.carsService.updateCarComment(this.carKey, this.car);  }
 
   logObject(object: any) {
-    console.log(object);
+    // console.log(object);
   }
 
   validateForm(comment: string) {

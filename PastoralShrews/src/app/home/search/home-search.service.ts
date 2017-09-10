@@ -7,9 +7,9 @@ export class FilterService {
         if  (data && properties && orignalList) {
 
             data = data.toLocaleLowerCase();
-            let filtered = orignalList.filter(item => {
+            const filtered = orignalList.filter(item => {
                 let match = false;
-                for (let prop of properties) {
+                for (const prop of properties) {
                     if (item[prop].toString().toLowerCase().indexOf(data) > -1) {
                         match = true;
                         break;
@@ -21,7 +21,7 @@ export class FilterService {
         } else {
             filteredList = orignalList;
         }
-        console.log(filteredList);
+        // console.log(filteredList);
         return filteredList;
     }
 }

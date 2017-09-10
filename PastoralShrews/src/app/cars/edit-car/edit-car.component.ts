@@ -55,7 +55,7 @@ export class EditCarComponent implements OnInit {
           type: [car.type, Validators.required],
         });
 
-        console.log(car.type);
+        // console.log(car.type);
       });
 
 
@@ -65,8 +65,8 @@ export class EditCarComponent implements OnInit {
   }
 
 onUpdateCar(newCar: ICar) {
-  console.log(newCar);
-   console.log('update');
+  // console.log(newCar);
+  //  console.log('update');
   this.carsService.updateCar(this.carKey, newCar);
 
   this.router.navigate(['cars/profile']);
