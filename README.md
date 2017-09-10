@@ -14,10 +14,7 @@ to write comments.
 
 ## Project Members
 
-| Team member         | Username          |
-| Nayden Mominski     | Nayden_mominski   |
-| Martin Kamenov      | martin.kamenov    |
-| Georgi Karov        | Joro97            |
+Team members: Nayden Mominski(Nayden_mominski), Georgi Karov(Joro97), Martin Kamenov(martin.kamenov)
 
 ## Links
 
