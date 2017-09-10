@@ -39,7 +39,8 @@ export class CarDetailsComponent implements OnInit {
 
   addComent(commentText: string) {
     const userEmail = this.auth.currentUserEmail;
-    const comment = new IComment(userEmail, commentText);
+    const dateNow = new Date();
+    const comment = new IComment(userEmail, commentText, dateNow);
     if (!this.car.comments) {
 
       const comments = [];

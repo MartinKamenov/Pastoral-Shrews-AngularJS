@@ -36,6 +36,7 @@
             <div class="grey comment" *ngFor="let comment of car.comments">
                 <div>
                     <p>{{comment.userEmail}}</p>
+                    <p>{{ comment.date | date:'medium'}}</p>
                     <h2 class="comment-text">{{comment.text}}</h2>
                 </div>
                 <br>
