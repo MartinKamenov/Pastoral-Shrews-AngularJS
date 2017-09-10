@@ -12,20 +12,22 @@ import { AsyncPipe } from '@angular/common';
 })
 export class DashboardComponent implements OnInit {
 car: ICar = new ICar();
-carsList: FirebaseListObservable<ICar[]>;
+cars: Array<ICar> = [];
 page = 1;
 showSpinner: boolean = true;
   constructor(public auth: AuthService, private carSrv: CarsService) { }
 
   ngOnInit() {
-    this.carsList = this.carSrv.getCarsList(
+this.carSrv.getCarsList(
       {
         orderByChild: 'userEmail',
         equalTo: this.auth.currentUserEmail
       }
-    );
-    this.carsList.subscribe(() => this.showSpinner = false);
-    console.log(this.carsList);
+    ).subscribe(cars => {
+      cars.reverse();
+      this.cars = cars;
+      this.showSpinner = false;
+    });
      }
   deleteCar(carToDelete) {
     this.carSrv.deleteCar(carToDelete);
