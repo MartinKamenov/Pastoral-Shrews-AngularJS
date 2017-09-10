@@ -1,6 +1,6 @@
-<home-search (changed)="filterChanged($event)"></home-search>
+<app-home-search (changed)="filterChanged($event)"></app-home-search>
 <pagination-controls (pageChange)="page = $event"> </pagination-controls>
-<div class="row" >
+<div class="row">
     <div class="col-lg-2 col-md-2 mb-2" *ngFor="let car of (filteredCars | paginate: { itemsPerPage: 12, currentPage: page })">
         <div class="card h-100 orangeBorder">
             <a routerLink="/cars/details/{{car.$key}}" routerLinkActive="active"><img class="card-img-top" [src]="car.image" alt=""></a>

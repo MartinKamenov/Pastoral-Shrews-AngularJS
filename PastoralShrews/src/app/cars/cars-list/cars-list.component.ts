@@ -20,7 +20,7 @@ export class CarsListComponent implements OnInit {
   order: string;
   sortByField: string;
   page = 1;
-  showSpinner: boolean = true;
+  showSpinner = true;
 
 
   constructor(

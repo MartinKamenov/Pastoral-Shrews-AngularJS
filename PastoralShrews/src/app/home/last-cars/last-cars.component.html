@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-4 col-md-6 mb-4" *ngFor="let car of cars">
-        <div myHighlight class="card h-100 orangeBorder">
+        <div appMyHighlight class="card h-100 orangeBorder">
             <a routerLink="/cars/details/{{car.$key}}" routerLinkActive="active"><img class="card-img-top" [src]="car.image" alt=""></a>
             <div class="card-body">
                 <h4 class="card-title">
