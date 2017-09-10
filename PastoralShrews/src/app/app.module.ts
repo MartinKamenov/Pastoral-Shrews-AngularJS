@@ -25,9 +25,8 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CarsModule } from './cars/cars.module';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
-import { HomeSearchComponent } from './home/search/home-search.component';
-
-import { FilterService } from './home/search/home-search.service';
+import { FilterComponent } from './advanced-search/filter/filter.component';
+import { FilterService } from './advanced-search/filter/filter.service';
 import { FooterComponent } from './footer/footer.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import { HighlightDirective } from './share/directives/hightlight.directive';
@@ -44,12 +43,13 @@ import { LastCarsComponent } from './home/last-cars/last-cars.component';
     LoginComponent,
     PageNotFoundComponent,
     SearchFilterComponent,
-    HomeSearchComponent,
+    AdvancedSearchComponent,
     FooterComponent,
     AdvancedSearchComponent,
     HighlightDirective,
     CauroselComponent,
-    LastCarsComponent
+    LastCarsComponent,
+    FilterComponent
     // LoadingSpinnerComponent
 ],
   imports: [

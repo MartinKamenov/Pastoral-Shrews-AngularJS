@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Output, Input, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-home-search',
-    templateUrl: './home-search.component.html'
+    selector: 'app-filter',
+    templateUrl: './filter.component.html'
 })
 
-export class HomeSearchComponent implements OnInit {
+export class FilterComponent implements OnInit {
     @Output() changed: EventEmitter<String>;
     filter: string;
 

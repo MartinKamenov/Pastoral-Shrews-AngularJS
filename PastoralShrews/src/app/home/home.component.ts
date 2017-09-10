@@ -2,8 +2,6 @@ import { element } from 'protractor';
 import { ICar } from './../cars/cars.models';
 import { Component, OnInit } from '@angular/core';
 import { CarsService } from './../cars/cars.service';
-import { HomeSearchComponent } from './search/home-search.component';
-// import { FilterService } from './search/home-search.service';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({

@@ -1,7 +1,6 @@
-
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
-import { FilterService } from './../home/search/home-search.service';
+import { FilterService } from './filter/filter.service';
 import { CarsService } from './../cars/cars.service';
 import { ICar } from './../cars/cars.models';
 import { NgxPaginationModule } from 'ngx-pagination';
