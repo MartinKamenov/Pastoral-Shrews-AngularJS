@@ -5,6 +5,10 @@ export class AppPage {
     return browser.get('/');
   }
 
+  navigateToHome() {
+    return browser.get('/home');
+  }
+
   getParagraphText() {
     return element(by.css('app-root h1')).getText();
   }
