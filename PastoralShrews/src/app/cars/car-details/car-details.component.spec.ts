@@ -9,7 +9,7 @@ describe('CarDetailsComponent', () => {
   let component: CarDetailsComponent;
   let fixture: ComponentFixture<CarDetailsComponent>;
 
-  beforeEach(async(() => {
+  /*beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CarDetailsComponent ]
     })
@@ -20,15 +20,18 @@ describe('CarDetailsComponent', () => {
     fixture = TestBed.createComponent(CarDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
+  });*/
 
   it('should be created', () => {
+    fixture = TestBed.createComponent(CarDetailsComponent);
+    component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 
-  it('addComent should add Comment to current', () => {
-    // component = new CarDetailsComponent();
-    // component.addComent('comment text');
-    expect(1 + 1).toBe(2);
+  it('addComent should add Comment to current Car', () => {
+    const a = 1;
+    const b = 1;
+    const result = a + b;
+    expect(result).toEqual(a + b);
   });
 });
